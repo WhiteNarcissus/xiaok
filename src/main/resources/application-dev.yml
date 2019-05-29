@@ -1,0 +1,53 @@
+server:
+  port: 8080
+
+spring:
+
+
+
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/cat?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    driver-class-name: com.mysql.jdbc.Driver
+
+
+
+
+
+  mybatis:
+     mapper-locations: classpath:com.mjc.mapper/*.xml
+     type-aliases-package: com.mjc.domain
+     mapper:
+        mappers: com.mjc.mapper.TkMapper
+        identity: MYSQL
+
+  logging:
+     config: classpath:log4j2.yml
+
+
+
+
+  redis:
+      # 使用的数据库，默认为0
+      database: 1
+      # host主机，默认为localhost
+      host: 127.0.0.1
+      # 端口号,默认为6379
+      port: 6379
+      # 密码，默认为空
+      password:
+
+  rabbitmq:
+      port: 5672
+
+
+  http:
+    encoding:
+      charset: utf-8
+      enabled: true
+
+
+
+
+
